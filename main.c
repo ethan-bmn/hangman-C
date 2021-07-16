@@ -37,12 +37,12 @@ int main(int argc, char *argv[])
   //Allocate memory
   buffer = (char*)calloc( 1, lSize + 1);
   if (!buffer) {
-    fclose(list), fputs("memory alloc failed", stderr), exit(0);
+    fclose(list), fputs("Memory alloc failed.", stderr), exit(0);
     }
 
   //Put the content of 'words.txt' in the buffer
   if ( 1!=fread(buffer, lSize, 1, list))
-    fclose(list), free(buffer), fputs("entire read failed", stderr), exit(0);
+    fclose(list), free(buffer), fputs("Couldn't fing 'words.txt' file.", stderr), exit(0);
 
 
   char* p = strtok(buffer, "\n");
